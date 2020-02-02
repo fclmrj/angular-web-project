@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 
 const url = 'http://localhost:8080/springmvc/';
 
@@ -10,14 +11,14 @@ const url = 'http://localhost:8080/springmvc/';
 })
 export class AppComponent {
   
-  title = 'angular-web-project';
+  @Input() title : string = 'angular-web-project with @material';
 
   constructor(private http: HttpClient){
       
-      http
+      /*http
         .get<Object[]>(url + 'produtos/listProdutosJSON')
         .subscribe( produtos => {
           console.log(produtos)
-        });
+        });*/
   }
 }
